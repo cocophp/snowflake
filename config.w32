@@ -1,0 +1,7 @@
+ARG_ENABLE('snowflake', 'snowflake support', 'no');
+
+if (PHP_SNOWFLAKE != 'no') {
+	AC_DEFINE('HAVE_SNOWFLAKE', 1, 'snowflake support enabled');
+
+	EXTENSION('snowflake', 'snowflake.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
